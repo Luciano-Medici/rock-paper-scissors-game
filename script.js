@@ -2,10 +2,14 @@
 let playerScore = 0;
 let computerScore = 0;
 const playerSide = document.createElement("div");
+playerSide.setAttribute("class", "text");
 const computerSide = document.createElement("div");
-const score = document.createElement("p");
+computerSide.setAttribute("class", "text")
+const score = document.createElement("div");
+score.setAttribute("class", "text");
 const options = document.querySelector("#options");
 const playerSelection = document.querySelector("#options");
+
 options.appendChild(playerSide);
 options.appendChild(computerSide);
 options.appendChild(score);

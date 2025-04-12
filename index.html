@@ -6,17 +6,24 @@
     <!-- <script src="./javascript.js"></script> -->
     <link rel="stylesheet" href="styles.css">
     <title>Rock-scissors-paper-game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/562e3354eb.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="title">
-        <div><img src="./img/title.png" alt="rock scissors paper title" class="img"></div>
+        <!-- <img src="./img/title.png" alt="rock scissors paper title" class="img"> -->
+        <h1 class="rock">ROCK</h1>
+        <h1 class="scissors">SCISSORS</h1>
+        <h1 class="paper">PAPER</h1>
     </div>
     <div id="container">
         <div>Chose one option</div>
         <div id="options">
-            <button id="rock" class="button"><img src="./img/rock.png" alt="rock" id="rock"></button>
-            <button id="scissors" class="button"><img src="./img/scissors.png" alt="scissors" id="scissors"></button>
-            <button id="paper" class="button"><img src="./img/paper.png" alt="paper" id="paper"></button>
+            <button id="rock" class="button"><i id="rock" class="fa-solid fa-hand-back-fist fa-7x"></i></button>
+            <button id="scissors" class="button"><i id="scissors" class="fa-solid fa-hand-scissors fa-7x"></i></button>
+            <button id="paper" class="button"><i id="paper" class="fa-solid fa-hand fa-7x"></i></button>
         </div>
     </div>
     <script src="./script.js"></script>
