@@ -9,9 +9,13 @@ const score = document.createElement("div");
 score.setAttribute("class", "text");
 const options = document.querySelector("#options");
 const playerSelection = document.querySelector("#options");
+const round = document.createElement("div");
+round.setAttribute("class", "text");
+
 
 options.appendChild(playerSide);
 options.appendChild(computerSide);
+options.appendChild(round);
 options.appendChild(score);
 
 function getComputerChoice(){
@@ -21,33 +25,53 @@ function getComputerChoice(){
         return "paper";
 }
 
+function getWiner(human, computer){
+    if (human === computer){
+        return "Tie";
+    } else if (human === "rock" && computer === "scissors" ||
+    human === "paper" && computer === "rock" ||
+    human === "scissors" && computer === "paper"){
+        playerScore++;
+        return "Player";
+    } else {
+        computerScore++;
+        return "Computer";
+    }
+}
+
+function showResult(winer){
+    round.textContent = winer == "Tie" ? "Tie! Play again!" : `${winer} wins!`;
+    score.textContent = `Player = ${playerScore} Computer = ${computerScore}`;
+}
+
 function playRound(humanChoice) {
     computerChoice = getComputerChoice();
+    let winer = getWiner(humanChoice, computerChoice)
     playerSide.textContent = "";
     playerSide.textContent = "Player choose: " + humanChoice;
     computerSide.textContent = "";
     computerSide.textContent = "Computer choice: " + computerChoice;
-    if (humanChoice === computerChoice){
-        score.textContent = `Tie! Nobody win this round\n\rPlayer = ${playerScore}\n\rComputer = ${computerScore}`;
-    } else if (humanChoice === "rock" && computerChoice === "scissors" ||
-    humanChoice === "paper" && computerChoice === "rock" ||
-    humanChoice === "scissors" && computerChoice === "paper"){
-        playerScore++;
-        score.textContent = `Player wins this round\n\rPlayer = ${playerScore}\n\rComputer = ${computerScore}`;
-    } else {
-        computerScore++;
-        score.textContent = `Computer wins this round\n\rPlayer = ${playerScore}\n\rComputer = ${computerScore}`;
-    }
+    showResult(winer);
+}
+
+function playGame(playerChoice){
+    playRound(playerChoice);
     if (playerScore == 5){
         playerScore = 0;
         computerScore = 0;
         score.textContent = "";
-        score.textContent = "Player wins the GAME!. Select an option to start playing again.";
+        computerSide.textContent = "";
+        playerSide.textContent = "";
+        round.textContent = "";
+        alert("YOU WON!")
     } else if (computerScore == 5) {
         playerScore = 0;
         computerScore = 0;
         score.textContent = "";
-        score.textContent = "Computer wins the GAME!. Select an option to start playing again.";
+        computerSide.textContent = "";
+        playerSide.textContent = "";
+        round.textContent = "";
+        alert("YOU LOSE!")
     }
 }
 
@@ -56,13 +80,13 @@ playerSelection.addEventListener("click", (event) => {
 
     switch(target.id){
         case "rock":
-            playRound("rock");
+            playGame("rock");
             break;
         case "scissors":
-            playRound("scissors");
+            playGame("scissors");
             break;
         case "paper":
-            playRound("paper");
+            playGame("paper");
             break;
     }
 });

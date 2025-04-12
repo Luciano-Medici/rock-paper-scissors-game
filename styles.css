@@ -22,7 +22,7 @@ h1.scissors{
 }
 
 h1.paper{
-    color: greenyellow;
+    color: #88dc65;
 }
 
 #title {
@@ -56,6 +56,8 @@ h1.paper{
 .button {
     padding: 20px;
     flex: 1;
+    border: 2px solid black;
+    border-radius: 5px;
 }
 
 .press-start-2p-regular {
@@ -64,15 +66,26 @@ h1.paper{
     font-style: normal;
 }
 
-i{
-    color: #25d366;
+i#rock {
+    color: gray;
+}
+
+i#scissors {
+    color: red;
+}
+
+i#paper{
+    color: #88dc65;
 }
 
 .text{
     margin: 20px;
+    color: white;
+    font-size: 20px;
 }
 
 button:hover,
 i:hover{
     cursor: pointer;
+    background-color: lightgray;
 }
