@@ -1,3 +1,15 @@
+
+let playerScore = 0;
+let computerScore = 0;
+const playerSide = document.createElement("div");
+const computerSide = document.createElement("div");
+const score = document.createElement("p");
+const options = document.querySelector("#options");
+const playerSelection = document.querySelector("#options");
+options.appendChild(playerSide);
+options.appendChild(computerSide);
+options.appendChild(score);
+
 function getComputerChoice(){
     let randomNumber = Math.ceil(Math.random() * 3);
     if (randomNumber == 1) return "rock";
@@ -35,19 +47,6 @@ function playRound(humanChoice) {
     }
 }
 
-let playerScore = 0;
-let computerScore = 0;
-const playerSide = document.createElement("div");
-const computerSide = document.createElement("div");
-const score = document.createElement("p");
-const options = document.querySelector("#options");
-options.appendChild(playerSide);
-options.appendChild(computerSide);
-options.appendChild(score);
-
-
-
-const playerSelection = document.querySelector("#options");
 playerSelection.addEventListener("click", (event) => {
     let target = event.target;
 
