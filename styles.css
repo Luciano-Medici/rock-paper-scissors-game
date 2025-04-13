@@ -34,58 +34,69 @@ h1.paper{
     margin: 60px 20px;
 }
 
-.img{
-    max-width: 100%;
-    max-height: auto;
-    flex-shrink: 1;
-}
-
-#container {
+#container{
     display: flex;
+    flex-direction: column;
     text-align: center;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    gap: 20px;
+    gap: 8px;
 }
 
-#options{
-    gap: 16px;
-}
-
-.button {
-    padding: 20px;
-    flex: 1;
-    border: 2px solid black;
-    border-radius: 5px;
-}
-
-.press-start-2p-regular {
+#container button{
     font-family: "Press Start 2P", system-ui;
-    font-weight: 400;
-    font-style: normal;
+    font-size: 50px;
+    padding: 10px;
+    margin: 10px;
 }
 
-i#rock {
+#container button:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.rockIcon{
     color: gray;
 }
 
-i#scissors {
+.scissorsIcon{
     color: red;
 }
 
-i#paper{
+.paperIcon{
     color: #88dc65;
 }
 
-.text{
-    margin: 20px;
-    color: white;
-    font-size: 20px;
+.message {
+    text-align: center;
+    padding: 10px;
+    font-size: large;
 }
 
-button:hover,
-i:hover{
-    cursor: pointer;
-    background-color: lightgray;
+.actualRound {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.playerSide,
+.computerSide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.playerSelection,
+.computerSelection{
+    height: 100px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playerScore,
+.computerScore{
+    padding: 10px;
 }
